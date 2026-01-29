@@ -1,11 +1,11 @@
-# Use a small Nginx image
+# Use nginx as a lightweight web server
 FROM nginx:alpine
 
-# Copy your frontend files into the Nginx html folder
+# Copy all frontend files to nginx html folder
 COPY . /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
 
-# Start Nginx
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
