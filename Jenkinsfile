@@ -2,11 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/SwethaAS-28/html-frontend.git'
-            }
-        }
+        stage('Clone Repo') {
+    steps {
+        git url: 'https://github.com/SwethaAS28/html-frontend.git', credentialsId: 'github-pat', branch: 'main'
+    }
+}
+
 
         stage('Build Docker Image') {
             steps {
